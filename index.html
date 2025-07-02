@@ -21,50 +21,56 @@
     }
 
     .login-container {
-      background-color: #ffffff;
+      background-color: #36d9dd;
       padding: 25px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       width: 300px;
       margin-bottom: 20px;
     }
 
-    .login-container h2 {
+    .announcement-container {
+      background-color: #ec892b;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      width: 300px;
+      margin-bottom: 20px;
+    }
+
+    .login-container h2,
+    .announcement-container h3 {
       text-align: center;
       margin-top: 0;
-      color: #333;
     }
 
     label {
       display: block;
       margin-top: 10px;
       font-weight: bold;
-      color: #444;
     }
 
     input[type="text"], input[type="password"] {
       width: 100%;
       padding: 10px;
       margin-top: 5px;
-      border-radius: 4px;
+      border-radius: 6px;
       border: 1px solid #ccc;
-      background-color: #fefefe;
     }
 
     button {
       width: 100%;
       padding: 10px;
-      background: #007bff;
+      background: #ec892b;
       color: white;
       border: none;
-      border-radius: 4px;
+      border-radius: 6px;
       cursor: pointer;
       margin-top: 15px;
-      font-weight: bold;
     }
 
     button:hover {
-      background: #0056b3;
+      background: #d4751e;
     }
 
     .error {
@@ -74,27 +80,9 @@
       margin-top: 10px;
     }
 
-    .announcement-container {
-      background-color: #e74c3c;
-      color: white;
-      padding: 20px;
-      border-radius: 8px;
-      width: 300px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .announcement-container h3 {
-      text-align: center;
-      margin-top: 0;
-    }
-
     .announcement-container ul {
       padding-left: 20px;
       margin: 0;
-    }
-
-    .announcement-container li {
-      margin-bottom: 6px;
     }
   </style>
 </head>
@@ -137,6 +125,11 @@
       } else {
         error.textContent = "Username atau password salah.";
       }
+    }
+  </script>
+</body>
+</html>
+
     }
   </script>
 </body>
