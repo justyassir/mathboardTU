@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -8,12 +7,15 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f1ecd6;
+      background: url('background.png') no-repeat center center fixed;
+      background-size: cover;
       display: flex;
-      height: 100vh;
       justify-content: center;
       align-items: center;
+      height: 100vh;
+      margin: 0;
     }
+
     .login-container {
       background-color: #36d9dd;
       padding: 30px;
@@ -21,50 +23,84 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       width: 300px;
     }
+
+    .login-container h2 {
+      text-align: center;
+      margin-top: 0;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
     input[type="text"], input[type="password"] {
       width: 100%;
       padding: 10px;
-      margin: 10px 0;
+      margin-top: 5px;
       border-radius: 6px;
       border: 1px solid #ccc;
     }
+
     button {
       width: 100%;
       padding: 10px;
-      background: #ec892b
-      color: #ec892b;
+      background: #ec892b;
+      color: white;
       border: none;
       border-radius: 6px;
       cursor: pointer;
+      margin-top: 15px;
     }
+
     button:hover {
-      background: #ec892b;
+      background: #d4751e;
     }
+
     .error {
       color: red;
       font-size: 0.9em;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .announcement {
+      margin-top: 30px;
+    }
+
+    .announcement h3 {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .announcement ul {
+      padding-left: 20px;
+      margin: 0;
     }
   </style>
 </head>
 <body>
   <div class="login-container">
-    <h2 style="text-align: center;">LOGIN MATH BOARD</h2>
+    <h2>LOGIN MATH BOARD</h2>
+    <label for="username">ID</label>
     <input type="text" id="username" placeholder="MathID" />
+    <label for="password">Password</label>
     <input type="password" id="password" placeholder="Password" />
     <button onclick="login()">Masuk</button>
     <p class="error" id="error"></p>
+
+    <!-- Pengumuman di bawah login -->
+    <div class="announcement">
+      <h3>Pengumuman</h3>
+      <ul>
+        <li>Ujian tengah semester dimulai 15 Juli</li>
+        <li>Deadline tugas: 10 Juli</li>
+        <li>Gunakan ID yang valid saat login</li>
+      </ul>
+    </div>
   </div>
 
- <div class="announcement-container">
-    <h3>Pengumuman</h3>
-    <ul>
-      <li>Ujian tengah semester dimulai 15 Juli</li>
-      <li>Deadline pengumpulan tugas: 10 Juli</li>
-      <li>Gunakan ID yang valid saat login</li>
-    </ul>
-  </div>
-
-  
   <script>
     const credentials = {
       "user1": { password: "pass123", link: "https://example.com/halaman1" },
