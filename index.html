@@ -10,21 +10,25 @@
       background-color: #f1ecd6;
       background-size: cover;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
       height: 100vh;
       margin: 0;
     }
 
-    .login-container {
+    .login-container,
+    .announcement-container {
       background-color: #36d9dd;
-      padding: 30px;
+      padding: 25px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       width: 300px;
+      margin-bottom: 20px;
     }
 
-    .login-container h2 {
+    .login-container h2,
+    .announcement-container h3 {
       text-align: center;
       margin-top: 0;
     }
@@ -65,22 +69,15 @@
       margin-top: 10px;
     }
 
-    .announcement {
-      margin-top: 30px;
-    }
-
-    .announcement h3 {
-      margin-bottom: 10px;
-      text-align: center;
-    }
-
-    .announcement ul {
+    .announcement-container ul {
       padding-left: 20px;
       margin: 0;
     }
   </style>
 </head>
 <body>
+
+  <!-- Kotak Login -->
   <div class="login-container">
     <h2>LOGIN MATH BOARD</h2>
     <label for="username">MathID</label>
@@ -89,16 +86,16 @@
     <input type="password" id="password" placeholder="Password" />
     <button onclick="login()">Masuk</button>
     <p class="error" id="error"></p>
+  </div>
 
-    <!-- Pengumuman di bawah login -->
-    <div class="announcement">
-      <h3>PENGUMUMAN</h3>
-      <ul>
-        <li>Ujian tengah semester dimulai 15 Juli</li>
-        <li>Deadline tugas: 10 Juli</li>
-        <li>Gunakan ID yang valid saat login</li>
-      </ul>
-    </div>
+  <!-- Kotak Pengumuman -->
+  <div class="announcement-container">
+    <h3>PENGUMUMAN</h3>
+    <ul>
+      <li>Ujian tengah semester dimulai 15 Juli</li>
+      <li>Deadline tugas: 10 Juli</li>
+      <li>Gunakan ID yang valid saat login</li>
+    </ul>
   </div>
 
   <script>
