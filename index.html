@@ -3,134 +3,118 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>LOGIN MATH BOARD</title>
-
-  <!-- Link Google Font: League Spartan -->
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
-
+  <title>Math Dashboard</title>
   <style>
     body {
-      font-family: 'League Spartan', sans-serif;
-      background-color: #f1ecd6;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #5AFEAD, #37DADD);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      margin: 0;
+      min-height: 100vh;
     }
 
-    .login-container {
-      background-color: #36d9dd;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      width: 300px;
+    .title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       margin-bottom: 20px;
     }
 
-    .announcement-container {
-      background-color: #ec892b;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      width: 300px;
-      margin-bottom: 20px;
+    .title img {
+      width: 42px;
+      height: 42px;
     }
 
-    .login-container h2,
-    .announcement-container h3 {
-      text-align: center;
-      margin-top: 0;
-    }
-
-    label {
-      display: block;
-      margin-top: 10px;
+    .title span {
+      font-size: 2rem;
       font-weight: bold;
+      color: #084B3F;
     }
 
-    input[type="text"], input[type="password"] {
+    .login-box {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 30px 25px;
+      width: 320px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .login-box label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #333333;
+    }
+
+    .login-box input {
       width: 100%;
       padding: 10px;
-      margin-top: 5px;
-      border-radius: 6px;
+      margin-bottom: 15px;
       border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
     }
 
-    button {
+    .login-box button {
       width: 100%;
-      padding: 10px;
-      background: #ec892b;
-      color: white;
+      padding: 12px;
+      background-color: #00BFA6;
       border: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
       border-radius: 6px;
       cursor: pointer;
-      margin-top: 15px;
     }
 
-    button:hover {
-      background: #d4751e;
+    .login-box button:hover {
+      background-color: #00A896;
     }
 
-    .error {
-      color: red;
-      font-size: 0.9em;
-      text-align: center;
-      margin-top: 10px;
+    .announcement {
+      margin-top: 25px;
+      width: 340px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-left: 4px solid #00BFA6;
+      padding: 15px;
+      border-radius: 8px;
+      color: #084B3F;
     }
 
-    .announcement-container ul {
-      padding-left: 20px;
-      margin: 0;
+    .announcement strong {
+      color: #00796B;
     }
 
-    .announcement-container li {
-      margin-bottom: 12px; /* Spasi antar poin lebih jauh */
-      line-height: 1;
+    .announcement p {
+      margin-top: 8px;
     }
   </style>
 </head>
 <body>
-
-  <!-- Kotak Login -->
-  <div class="login-container">
-    <h2>LOGIN MATH BOARD</h2>
-    <label for="username">MathID</label>
-    <input type="text" id="username" placeholder="MathID" />
-    <label for="password">Password</label>
-    <input type="password" id="password" placeholder="Password" />
-    <button onclick="login()">Masuk</button>
-    <p class="error" id="error"></p>
+  <div class="title">
+    <img src="https://raw.githubusercontent.com/nama-user/nama-repo/main/logomathboard.png.png" alt="Sigma Logo">
+    <span>Math Dashboard</span>
   </div>
 
-  <!-- Kotak Pengumuman -->
-  <div class="announcement-container">
-    <h3>PENGUMUMAN</h3>
-    <ul>
-      <li>Ujian tengah semester dimulai 15 Juli</li>
-      <li>Deadline tugas: 10 Juli</li>
-      <li>Gunakan ID yang valid saat login</li>
-    </ul>
+  <div class="login-box">
+    <form>
+      <label for="mathid">Math ID</label>
+      <input type="text" id="mathid" name="mathid" placeholder="Masukkan Math ID" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Masukkan Password" required />
+
+      <button type="submit">Login</button>
+    </form>
   </div>
 
-  <script>
-    const credentials = {
-      "mb-0082906681": { password: "30052008", link: "https://youtube.com" },
-      "mb-0084953063": { password: "02042008", link: "https://facebook.com" }
-    };
-
-    function login() {
-      const user = document.getElementById("username").value;
-      const pass = document.getElementById("password").value;
-      const error = document.getElementById("error");
-
-      if (credentials[user] && credentials[user].password === pass) {
-        window.location.href = credentials[user].link;
-      } else {
-        error.textContent = "Username atau password salah.";
-      }
-    }
-  </script>
+  <div class="announcement">
+    <strong>📢 Pengumuman:</strong>
+    <p>Ujian Matematika Semester Ganjil dilaksanakan tanggal <b>5 Agustus 2025</b>. Fokus pada: <i>Trigonometri, Statistika, Logika Matematika</i>.</p>
+  </div>
 </body>
 </html>
