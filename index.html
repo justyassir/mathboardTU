@@ -18,21 +18,10 @@
     }
 
     .title {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .title img {
-      width: 42px;
-      height: 42px;
-    }
-
-    .title span {
       font-size: 2rem;
       font-weight: bold;
       color: #084B3F;
+      margin-bottom: 20px;
     }
 
     .login-box {
@@ -75,6 +64,12 @@
       background-color: #00A896;
     }
 
+    #error {
+      color: red;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
     .announcement {
       margin-top: 25px;
       width: 340px;
@@ -89,32 +84,61 @@
       color: #00796B;
     }
 
-    .announcement p {
+    .announcement ul {
+      padding-left: 20px;
       margin-top: 8px;
+    }
+
+    .announcement li {
+      margin-bottom: 8px;
     }
   </style>
 </head>
 <body>
-  <div class="title">
-    <img src="https://raw.githubusercontent.com/nama-user/nama-repo/main/logomathboard.png.png" alt="Sigma Logo">
-    <span>Math Dashboard</span>
-  </div>
+  <div class="title">Math Dashboard</div>
 
   <div class="login-box">
-    <form>
-      <label for="mathid">Math ID</label>
-      <input type="text" id="mathid" name="mathid" placeholder="Masukkan Math ID" required />
+    <div id="error"></div>
+    <label for="username">Math ID</label>
+    <input type="text" id="username" placeholder="Masukkan Math ID" required />
 
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" placeholder="Masukkan Password" required />
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="Masukkan Password" required />
 
-      <button type="submit">Login</button>
-    </form>
+    <button onclick="login()">Login</button>
   </div>
 
   <div class="announcement">
     <strong>📢 Pengumuman:</strong>
-    <p>Ujian Matematika Semester Ganjil dilaksanakan tanggal <b>5 Agustus 2025</b>. Fokus pada: <i>Trigonometri, Statistika, Logika Matematika</i>.</p>
+    <ul>
+      <li>Ujian Matematika Semester Ganjil dilaksanakan tanggal <b>5 Agustus 2025</b>.</li>
+      <li>Materi yang diujikan:
+        <ul>
+          <li>Trigonometri</li>
+          <li>Statistika</li>
+          <li>Logika Matematika</li>
+        </ul>
+      </li>
+    </ul>
   </div>
+
+  <script>
+    const credentials = {
+      "mb-0082906681": { password: "30052008", link: "https://youtube.com" },
+      "mb-0084953063": { password: "02042008", link: "https://facebook.com" }
+    };
+
+    function login() {
+      const user = document.getElementById("username").value.trim();
+      const pass = document.getElementById("password").value;
+      const error = document.getElementById("error");
+
+      if (credentials[user] && credentials[user].password === pass) {
+        window.location.href = credentials[user].link;
+      } else {
+        error.textContent = "Math ID atau Password salah.";
+      }
+    }
+  </script>
 </body>
 </html>
